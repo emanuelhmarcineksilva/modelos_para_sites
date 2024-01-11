@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    /* O "flex-wrap: wrap;" permite a quebra de linha */
+    margin: 3px;
+    flex: 1 1 100vw;
+}
+
+
+header, nav, main, aside, footer {
+    display: flex;
+    flex-wrap: wrap;
+    /* O "flex-wrap: wrap;" permite a quebra de linha */
+    margin: 3px;
+    background: #a1a1a1;
+} 
+
+header {
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+nav {
+    flex: 1 1 200px;
+}
+
+main {
+    flex: 1 1 500px;
+    height: calc(100vh - 224px);
+}
+
+aside {
+    flex: 1 1 200px;
+}
+
+footer {
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+/* Por que "flex: 1 1 100vw" */
+/* O primeiro número representa o "flex-grow" que é a abilidade de um item crescer */
+/* O segundo número representa o "flex-shrink" que é a capacidade de redução do item */
+/* O terceiro número representa o "flex-basis" que é o tamanho inicial do item */
+
+@media only screen and (max-width: 923px) {
+    main {
+        height: calc(100vh - 330px);
+    }
+
+    aside {
+        flex: 1 1 100vw;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 717px) {
+    nav {
+        height: 100px;
+    }
+
+    main {
+        height: calc(100vh - 436px);
+    }
+}
+
+

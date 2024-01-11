@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    /* O "flex-wrap: wrap;" permite a quebra de linha */
+    margin: 3px;
+    flex: 1 1 100vw;
+}
+
+header, nav, main, aside, footer {
+    display: flex;
+    flex-wrap: wrap;
+    /* O "flex-wrap: wrap;" permite a quebra de linha */
+    margin: 3px;
+    background: #a1a1a1;
+} 
+
+header {
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+header #logo {
+    flex: 0 1 200px;
+    background: #c9c9c9;
+}
+
+#openMenu, #closeMenu {
+    border: none;
+    background: none;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav {
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a {
+    margin: 3%;
+    font-size: 20pt;
+    border: none;
+}
+
+main {
+    flex: 20 1 500px;
+    height: calc(100vh - 224px);
+    /* O código abaixo criou a barra de rolagem no site dentro do principal */
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+main section {
+    width: 100%;
+    height: 2000px;
+    margin: 10px;
+    background: linear-gradient(#9a9a9a, #5a5a5a, #1a1a1a);
+}
+
+aside {
+    flex: 1 1 200px;
+}
+
+footer {
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+/* Por que "flex: 1 1 100vw" */
+/* O primeiro número representa o "flex-grow" que é a abilidade de um item crescer */
+/* O segundo número representa o "flex-shrink" que é a capacidade de redução do item */
+/* O terceiro número representa o "flex-basis" que é o tamanho inicial do item */
+
+a {
+    text-decoration: none;
+    color: inherit;
+/* O "color: inherit;" coloca a cor do elemento pai que é preto */
+}
+
+@media only screen and (max-width: 923px) {
+    header {
+        order: 0;
+        /* O código "order" define uma ordem entre os elementos começando no zero */
+    }
+
+    main {
+        height: calc(100vh - 330px);
+        order: 1;
+    }
+
+    aside {
+        flex: 1 1 100vw;
+        height: 100px;
+        order: 2;
+    }
+    
+    footer {
+        order: 3;
+    }
+}
+
+@media only screen and (max-width: 717px) {
+    #openMenu, #closeMenu {
+        display: block;
+    }
+
+    #openMenu {
+        margin-left: auto;
+    }
+
+    #closeMenu {
+        position: fixed;
+        right: 1em;
+        top: 0.5em;
+    }
+
+    nav {
+        position: fixed;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(255, 255, 255, 0.8);
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        display: none;
+        opacity: 0;
+        transition: 0.3s;
+    }
+}
+
+
+
